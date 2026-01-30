@@ -1,0 +1,6 @@
+# Mail Flow Manager Dependencies
+requests>=2.28.0
+python-dotenv>=0.19.0
+
+# Note: imaplib and email are built-in Python modules
+# No additional dependencies needed for those
