@@ -11,6 +11,12 @@ An automated email processing system that monitors Gmail and processes incoming 
 - **Dual Storage System**: Raw emails in `mails/` and evaluated emails organized in `evaluated/category/priority/`
 - **OOP Architecture**: Clean, maintainable code following DRY principles
 
+## 🎥 Video Showcase
+
+[![Mail Flow Manager Demo](https://img.youtube.com/vi/7P1HFDsrYuM/maxresdefault.jpg)](https://youtu.be/7P1HFDsrYuM)
+
+*Click the image above to watch the Mail Flow Manager in action! See how it automatically processes emails through the complete AI pipeline.*
+
 ## 📁 Project Structure
 
 ```
