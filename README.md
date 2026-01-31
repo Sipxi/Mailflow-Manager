@@ -71,6 +71,10 @@ Mailflow-Manager/
 ```bash
 python main.py
 ```
+Or just run bash script
+```bash
+run_mailflow.bat
+```
 
 ### Test Individual Components
 ```bash
