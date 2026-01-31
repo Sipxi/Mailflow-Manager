@@ -98,14 +98,19 @@ class GmailMonitor:
             return None
 
     def _save_evaluated_email(self, subject, sender, body, category="", summary="", importance=""):
-        """Saves evaluated email with processing results to the 'evaluated' folder"""
-        # Create folder if it doesn't exist
-        if not os.path.exists(self.evaluated_folder):
-            os.makedirs(self.evaluated_folder)
+        """Saves evaluated email with processing results to nested folders: evaluated/category/priority/"""
+        # Ensure we have valid category and importance values
+        clean_category = category.strip() if category else "uncategorized"
+        clean_importance = importance.strip().lower() if importance else "unknown"
+        
+        # Create nested folder structure: evaluated/category/priority/
+        nested_folder = os.path.join(self.evaluated_folder, clean_category, clean_importance)
+        if not os.path.exists(nested_folder):
+            os.makedirs(nested_folder)
 
         # Create filename with date-subject format
         filename = self._create_filename(subject)
-        filepath = os.path.join(self.evaluated_folder, filename)
+        filepath = os.path.join(nested_folder, filename)
 
         try:
             with open(filepath, "w", encoding="utf-8") as f:
@@ -218,7 +223,7 @@ class GmailMonitor:
                 else:
                     print(".", end="", flush=True)
 
-                time.sleep(10)
+                time.sleep(1)
 
             except Exception as e:
                 print(f"\n⚠️ Error: {e}")

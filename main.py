@@ -11,20 +11,19 @@ a complete OOP-based pipeline:
 
 File Organization:
 - Raw emails → 'mails/' folder (original content only)
-- Evaluated emails → 'evaluated/' folder (with Category, Importance, Summary, Original message)
+- Evaluated emails → 'evaluated/category/priority/' folders (with Category, Importance, Summary, Original message)
 
 Both use date-subject filename format: YYYY-MM-DD_Subject.txt
 """
 
 from modules.gmailmonitor import GmailMonitor
+from config import Config
 
 def main():
     """Main entry point for the Mail Flow Manager"""
     print("🚀 Mail Flow Manager Starting...")
-    print("📧 OOP-Based Pipeline: Monitor → Categorize → Summarize → Rate Importance")
-    print("💾 Raw emails: mails/ | Evaluated emails: evaluated/")
-    print("📅 Format: YYYY-MM-DD_Subject.txt")
-    print("⭐ Importance Levels: low → medium → high → urgent → critical")
+    print("📧 Pipeline: Monitor → Categorize → Summarize → Rate Importance")
+    print(f"Listening on {Config.MAIL_USERNAME} for new emails...")
     print("-" * 70)
     
     try:

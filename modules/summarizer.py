@@ -1,6 +1,6 @@
 from typing import Dict
 from modules.base_ai_processor import BaseAIProcessor
-from modules.ai_prompts import AIPrompts
+from utils.ai_prompts import AIPrompts
 
 
 class EmailSummarizer(BaseAIProcessor):

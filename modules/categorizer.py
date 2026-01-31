@@ -2,7 +2,7 @@ import os
 import json
 from typing import List, Dict
 from modules.base_ai_processor import BaseAIProcessor
-from modules.ai_prompts import AIPrompts
+from utils.ai_prompts import AIPrompts
 
 
 class EmailCategorizer(BaseAIProcessor):

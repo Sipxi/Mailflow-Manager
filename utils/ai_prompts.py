@@ -5,8 +5,7 @@ AI Prompts for Mail Flow Manager
 This module contains all AI prompts used by the email processing system.
 Centralizing prompts makes them easier to maintain, modify, and optimize.
 
-Author: Mail Flow Manager Team
-Version: 1.0.0
+Author: Sipxi
 """
 
 

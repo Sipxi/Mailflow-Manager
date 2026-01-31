@@ -8,7 +8,7 @@ An automated email processing system that monitors Gmail and processes incoming 
 - **Smart Categorization**: AI-powered email classification (Promotion, Spam, Work, Personal, Finance, Other)
 - **Intelligent Summarization**: Extracts only essential information from emails  
 - **5-Level Importance Rating**: Rates emails on scale: `low` → `medium` → `high` → `urgent` → `critical`
-- **Dual Storage System**: Raw emails in `mails/` and evaluated emails in `evaluated/`
+- **Dual Storage System**: Raw emails in `mails/` and evaluated emails organized in `evaluated/category/priority/`
 - **OOP Architecture**: Clean, maintainable code following DRY principles
 
 ## 📁 Project Structure
@@ -20,7 +20,14 @@ Mailflow-Manager/
 ├── test.py                # Component testing script
 ├── requirements.txt       # Dependencies
 ├── mails/                 # Raw email storage (original content only)
-├── evaluated/             # Processed emails (with Category, Importance, Summary)
+├── evaluated/             # Processed emails organized by category and priority
+│   ├── work/
+│   │   ├── high/
+│   │   ├── medium/
+│   │   └── low/
+│   └── personal/
+│       ├── urgent/
+│       └── medium/
 └── modules/
     ├── base_ai_processor.py   # Base class for AI processors (DRY principle)
     ├── ai_prompts.py          # Centralized AI prompts for all processors
@@ -79,7 +86,7 @@ When a new email arrives, it goes through this OOP-based pipeline:
 3. **📂 Categorizer** - Classifies the email into categories
 4. **📝 Summarizer** - Creates a concise summary of essential information
 5. **⭐ Importance Rater** - Rates importance on 5-level scale
-6. **📊 Evaluated Storage** - Saves processed email to `evaluated/` folder
+6. **📊 Evaluated Storage** - Saves processed email to `evaluated/category/priority/` folders
 
 ## 📄 File Organization
 
@@ -95,7 +102,7 @@ Content:
 [Original email content only...]
 ```
 
-### Evaluated Emails (`evaluated/` folder)  
+### Evaluated Emails (`evaluated/category/priority/` folders)  
 Format: `YYYY-MM-DD_Subject.txt`
 ```
 Subject: Meeting Request - Project Review
